@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  
+  mysql:
+    build: .docker/mysql
+    container_name: games-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
+    ports:
+      - 13306:3306
+    volumes:
+      - .docker/dbdata:/var/lib/mysql
